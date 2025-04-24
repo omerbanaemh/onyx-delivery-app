@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
         minTextAdapt: true,
         splitScreenMode: true,
-        designSize: const Size(360, 690),
+        designSize: const Size(375, 812),
         builder: (context, child) {
           SystemChrome.setPreferredOrientations([
             DeviceOrientation.portraitUp,
