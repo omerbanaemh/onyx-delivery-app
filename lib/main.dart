@@ -42,6 +42,11 @@ class MyApp extends StatelessWidget {
               Locale('en', 'US'),
               Locale('ar', ''),
             ],
+            themeMode: ThemeMode.light,
+            theme: ThemeData(
+              fontFamily: 'Cairo',
+              useMaterial3: true,
+            ),
             initialRoute: AppPages.INITIAL,
             getPages: AppPages.routes,
           );

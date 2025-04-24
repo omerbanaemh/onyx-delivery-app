@@ -20,4 +20,9 @@ class UiHelper {
   static SizedBox verticalSpace50 = SizedBox(height: 50.0.h);
   static SizedBox verticalSpaceExtraMassive = SizedBox(height: 88.0.h);
   static SizedBox verticalSpace100 = SizedBox(height: 100.0.h);
+  static SizedBox verticalSpace130 = SizedBox(height: 130.0.h);
+  static SizedBox verticalSpace150 = SizedBox(height: 150.0.h);
+  static SizedBox verticalSpace170 = SizedBox(height: 170.0.h);
+  static SizedBox verticalSpace180 = SizedBox(height: 180.0.h);
+  static SizedBox verticalSpace200 = SizedBox(height: 200.0.h);
 }
