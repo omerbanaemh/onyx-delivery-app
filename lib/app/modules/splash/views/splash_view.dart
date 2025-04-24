@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:onyx_delivery/app/core/constants/app_assets.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -9,11 +11,8 @@ class SplashView extends StatelessWidget {
         title: const Text('Splash Screen'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'Splash Screen',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: SvgPicture.asset(
+        AppAssets.logo,
       ),
     );
   }
