@@ -14,19 +14,19 @@ class HomeView extends GetView<HomeController> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            backgroundColor: AppColors.whiteColor,
+            backgroundColor: AppColors.accentColor,
             expandedHeight: 127.h,
             flexibleSpace: FlexibleSpaceBar(
-              title: Obx(() => RichText(
-                    text: TextSpan(
-                      text: controller.userName,
-                      style: TextStyle(
-                        fontSize: 20.sp,
-                        color: AppColors.secondaryColor,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  )),
+              title: RichText(
+                text: TextSpan(
+                  text: '${controller.userName?.split(' ').first} ',
+                  style: TextStyle(
+                    fontSize: 20.sp,
+                    color: AppColors.whiteColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
               background: Container(),
             ),
           ),
