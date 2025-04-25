@@ -61,13 +61,19 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               UiHelper.verticalSpaceLarge27,
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 17.w),
-                child: CustomButton(
-                  text: 'Login',
-                  onPressed: controller.onPressedLogin,
-                ),
-              ),
+              GetBuilder<LoginController>(builder: (_) {
+                return controller.isLoading
+                    ? const CircularProgressIndicator(
+                        color: AppColors.secondaryColor,
+                      )
+                    : Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 17.w),
+                        child: CustomButton(
+                          text: 'Login',
+                          onPressed: controller.onPressedLogin,
+                        ),
+                      );
+              }),
               UiHelper.verticalSpaceLarge27,
               SvgPicture.asset(
                 AppAssets.devlieryBusImage,

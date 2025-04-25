@@ -9,23 +9,30 @@ class LoginController extends GetxController {
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
+  bool isLoading = false;
+
   onPressedLogin() async {
     if (formKey.currentState!.validate()) {
-      // Perform login action
+      isLoading = true;
+      update();
+
       String userId = userIdController.text;
       String password = passwordController.text;
 
       var requestData = {
         "Value": {
           "P_LANG_NO": "1",
-          "P_DLVRY_NO": "1010",
-          "P_PSSWRD": "1",
+          "P_DLVRY_NO": userId,
+          "P_PSSWRD": password,
         }
       };
 
       try {
         var response = await DioHelper()
             .postData(ApiPaths.checkDeliveryLogin, requestData);
+
+        isLoading = false;
+        update();
 
         if (response != null &&
             response['Data'] != null &&
@@ -35,6 +42,7 @@ class LoginController extends GetxController {
           var errMsg = response['Result']['ErrMsg'];
 
           if (errNo == 0) {
+            // Get.offAllNamed('/home');
             Get.snackbar(
               backgroundColor: AppColors.successColor,
               colorText: AppColors.whiteColor,
