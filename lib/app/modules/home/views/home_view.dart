@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:onyx_delivery/app/components/custom_tabbar.dart';
+import 'package:onyx_delivery/app/core/classes/ui_helpers.dart';
 import 'package:onyx_delivery/app/core/constants/app_colors.dart';
 
 import '../controllers/home_controller.dart';
@@ -29,6 +31,18 @@ class HomeView extends GetView<HomeController> {
               ),
               background: Container(),
             ),
+          ),
+          SliverToBoxAdapter(
+            child: UiHelper.verticalSpaceMedium,
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 17.w),
+              child: CustomTabbar(),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: UiHelper.verticalSpaceMedium,
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
