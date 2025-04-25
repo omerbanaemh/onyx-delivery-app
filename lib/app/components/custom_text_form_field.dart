@@ -51,7 +51,7 @@ class CustomTextFormField extends StatelessWidget {
       textInputAction: TextInputAction.next,
       keyboardType: keyboardType,
       onFieldSubmitted: (value) {
-        FocusScope.of(context).nextFocus();
+        FocusScope.of(context).unfocus();
       },
       obscureText: obscureText,
       obscuringCharacter: '*',

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onyx_delivery/app/core/constants/app_colors.dart';
@@ -26,8 +24,8 @@ class LoginController extends GetxController {
       var requestData = {
         "Value": {
           "P_LANG_NO": "1",
-          "P_DLVRY_NO": userId,
-          "P_PSSWRD": password,
+          "P_DLVRY_NO": "1010",
+          "P_PSSWRD": "1",
         }
       };
 
@@ -55,9 +53,9 @@ class LoginController extends GetxController {
             });
 
             // Query all rows to check if data is saved
-            dbHelper.queryAllRows().then((value) {
-              log('------------------------------>' + value.toString());
-            });
+            // dbHelper.queryAllRows().then((value) {
+            //   log('------------------------------>' + value.toString());
+            // });
 
             // Navigate to home screen
             Get.offAllNamed(Routes.HOME);
