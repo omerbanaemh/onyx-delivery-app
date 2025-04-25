@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onyx_delivery/app/core/constants/app_colors.dart';
 import 'package:onyx_delivery/app/core/constants/end_point.dart';
+import 'package:onyx_delivery/app/core/helpers/sqlite_db_helper.dart';
 import 'package:onyx_delivery/app/data/remote/api_provider.dart';
 
 class LoginController extends GetxController {
@@ -42,7 +43,19 @@ class LoginController extends GetxController {
           var errMsg = response['Result']['ErrMsg'];
 
           if (errNo == 0) {
+           
+
+            // Save user data to local storage or database
+            var dbHelper = DatabaseHelper();
+            await dbHelper.insert({
+              'id': 1,
+              'name': deliveryName,
+              'language': 1,
+            });
+
+            // Navigate to home screen
             // Get.offAllNamed('/home');
+
             Get.snackbar(
               backgroundColor: AppColors.successColor,
               colorText: AppColors.whiteColor,
