@@ -1,9 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onyx_delivery/app/core/constants/app_colors.dart';
 import 'package:onyx_delivery/app/core/constants/end_point.dart';
 import 'package:onyx_delivery/app/core/helpers/sqlite_db_helper.dart';
 import 'package:onyx_delivery/app/data/remote/api_provider.dart';
+import 'package:onyx_delivery/app/routes/app_pages.dart';
 
 class LoginController extends GetxController {
   final userIdController = TextEditingController();
@@ -43,8 +46,6 @@ class LoginController extends GetxController {
           var errMsg = response['Result']['ErrMsg'];
 
           if (errNo == 0) {
-           
-
             // Save user data to local storage or database
             var dbHelper = DatabaseHelper();
             await dbHelper.insert({
@@ -53,8 +54,13 @@ class LoginController extends GetxController {
               'language': 1,
             });
 
+            // Query all rows to check if data is saved
+            dbHelper.queryAllRows().then((value) {
+              log('------------------------------>' + value.toString());
+            });
+
             // Navigate to home screen
-            // Get.offAllNamed('/home');
+            Get.offAllNamed(Routes.HOME);
 
             Get.snackbar(
               backgroundColor: AppColors.successColor,
