@@ -12,13 +12,9 @@ class LoginRepository {
 
   Future<Response?> login(String userId, String password) async {
     final data = {
-      'body': {
-        'Value': {
-          'P_LANG_NO': '2',
-          'P_DLVRY_NO': userId,
-          'P_PSSWRD': password,
-        },
-      },
+      'P_LANG_NO': '2',
+      'P_DLVRY_NO': userId,
+      'P_PSSWRD': password,
     };
 
     try {

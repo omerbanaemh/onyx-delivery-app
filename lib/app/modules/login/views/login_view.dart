@@ -65,7 +65,7 @@ class LoginView extends GetView<LoginController> {
                 padding: EdgeInsets.symmetric(horizontal: 17.w),
                 child: CustomButton(
                   text: 'Login',
-                  onPressed: () {},
+                  onPressed: controller.onPressedLogin,
                 ),
               ),
               UiHelper.verticalSpaceLarge27,
