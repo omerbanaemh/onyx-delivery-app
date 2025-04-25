@@ -7,7 +7,7 @@ import 'app/routes/app_pages.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   runApp(
     const MyApp(),
   );
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
             ],
             themeMode: ThemeMode.light,
             theme: ThemeData(
-              fontFamily: 'Cairo',
+              fontFamily: 'Montserrat',
               useMaterial3: true,
             ),
             initialRoute: AppPages.INITIAL,
