@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onyx_delivery/app/core/constants/app_colors.dart';
 import 'package:onyx_delivery/app/core/constants/end_point.dart';
-import 'package:onyx_delivery/app/core/helpers/sqlite_db_helper.dart';
 import 'package:onyx_delivery/app/data/remote/api_provider.dart';
 import 'package:onyx_delivery/app/routes/app_pages.dart';
 
@@ -45,12 +44,12 @@ class LoginController extends GetxController {
 
           if (errNo == 0) {
             // Save user data to local storage or database
-            var dbHelper = DatabaseHelper();
-            await dbHelper.insert({
-              'id': 1,
-              'name': deliveryName,
-              'language': 1,
-            });
+            // var dbHelper = DatabaseHelper();
+            // await dbHelper.insert({
+            //   'id': 1,
+            //   'name': deliveryName,
+            //   'language': 1,
+            // });
 
             // Query all rows to check if data is saved
             // dbHelper.queryAllRows().then((value) {
