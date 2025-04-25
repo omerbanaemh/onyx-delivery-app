@@ -51,7 +51,7 @@ class HomeView extends GetView<HomeController> {
                   title: Text('Item #$index'),
                 );
               },
-              childCount: 100,
+              childCount: 8,
             ),
           ),
         ],
