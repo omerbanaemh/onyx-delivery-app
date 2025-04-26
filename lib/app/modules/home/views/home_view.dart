@@ -5,6 +5,7 @@ import 'package:onyx_delivery/app/components/custom_tabbar.dart';
 import 'package:onyx_delivery/app/core/classes/ui_helpers.dart';
 import 'package:onyx_delivery/app/core/constants/app_colors.dart';
 import 'package:onyx_delivery/app/core/services/session_manager.dart';
+import 'package:onyx_delivery/app/modules/home/widgets/order_card.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -50,9 +51,7 @@ class HomeView extends GetView<HomeController> {
             SliverList(
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
-                  return ListTile(
-                    title: Text('Item #$index'),
-                  );
+                  return const OrderCard();
                 },
                 childCount: 8,
               ),

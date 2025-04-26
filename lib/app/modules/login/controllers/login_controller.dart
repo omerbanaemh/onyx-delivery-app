@@ -23,8 +23,8 @@ class LoginController extends GetxController {
       var requestData = {
         "Value": {
           "P_LANG_NO": "1",
-          "P_DLVRY_NO": "1010",
-          "P_PSSWRD": "1",
+          "P_DLVRY_NO": userId,
+          "P_PSSWRD": password,
         }
       };
 

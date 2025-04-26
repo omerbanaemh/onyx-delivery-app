@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:onyx_delivery/app/core/constants/app_assets.dart';
+import 'package:onyx_delivery/app/modules/login/widgets/language_selection_dialog.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -28,9 +29,17 @@ class CustomAppBar extends StatelessWidget {
             ),
             Positioned(
               top: 45.h,
-              left: 70.w,
-              child: SvgPicture.asset(
-                AppAssets.languageIcon,
+              left: 50.w,
+              child: InkWell(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const LanguageSelectionDialog(),
+                  );
+                },
+                child: SvgPicture.asset(
+                  AppAssets.languageIcon,
+                ),
               ),
             ),
           ],

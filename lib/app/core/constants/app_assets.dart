@@ -10,4 +10,6 @@ class AppAssets {
   static const String languageIcon = "assets/images/svg/ic_language.svg";
 
   static const String logo = "assets/images/svg/logo.svg";
+  static const String arabic = "assets/images/svg/arabic_flag.svg";
+  static const String english = "assets/images/svg/english_flag.svg";
 }
